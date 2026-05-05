@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="S2GS: Streaming Semantic Gaussian Splatting for Online Scene Understanding and Reconstruction">
+  <meta name="keywords" content="S2GS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S2GS: Streaming Semantic Gaussian Splatting for Online Scene Understanding and Reconstruction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">S2GS: Streaming Semantic Gaussian Splatting for Online Scene Understanding and Reconstruction</h1>
+                
+                <div class="is-size-4 has-text-weight-bold" style="color: #8B0000;">ICML 2026</div>
+                <br>
+                
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                    <span>Renhe Zhang</span><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <span>Yuyang Tan</span><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <span>Jingyu Gong</span><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <span>Zhizhong Zhang</span><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <span>Lizhuang Ma</span><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <span>Yuan Xie</span><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <span>Xin Tan</span><sup>1,2</sup>
+                  </span>
+                </div>
+      
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>East China Normal University</span><br>
+                  <span class="author-block"><sup>2</sup>Shanghai Artificial
+                    Intelligence Laboratory</span>
+                </div>
+      
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- PDF Link. -->
+                    <!-- <span class="link-block">
+                      <a href=""
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/2603.14232"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://github.com/stdcouzrh/s2gs"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code (Coming Soon)</span>
+                        </a>
+                    </span>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Abstract</h2>
+              <div class="content has-text-justified">
+                Existing offline feed-forward methods for joint scene understanding and reconstruction on long image streams often repeatedly perform global computation over an ever-growing set of past observations, causing runtime and GPU memory to increase rapidly with sequence length and limiting scalability. We propose Streaming Semantic Gaussian Splatting (S2GS), a strictly causal, incremental 3D Gaussian semantic field framework: it does not leverage future frames and continuously updates scene geometry, appearance, and instance-level semantics without reprocessing historical frames, enabling scalable online joint reconstruction and understanding. S2GS adopts a geometry-semantic decoupled dual-backbone design: the geometry branch performs causal modeling to drive incremental Gaussian updates, while the semantic branch leverages a 2D foundation vision model and a query-driven decoder to predict segmentation masks and identity embeddings, further stabilized by query-level contrastive alignment and lightweight online association with an instance memory. Experiments show that S2GS matches or outperforms strong offline baselines on joint reconstruction-and-understanding benchmarks, while significantly improving long-horizon scalability: it processes 1,000+ frames with much slower growth in runtime and GPU memory, whereas offline global-processing baselines typically run out of memory at around 80 frames under the same setting.
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Method. -->
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Motivation</h2>
+            <!-- Interpolating. -->
+              <div class="content has-text-justified">
+                <p>
+                  Most existing approaches remain offline-global in the sense that, as new frames arrive, they repeatedly recompute cross-frame interactions over the growing history. While effective for short sequences, this paradigm scales poorly: both runtime and memory typically grow rapidly with the number of views, hindering long-horizon online scenarios. As shown in Figure 1, even on an H200 GPU equipped with 140 GB of VRAM, <a href="https://arxiv.org/abs/2507.02705" class="external-link">SIU3R (Xu et al., 2025)</a> still encounters an out-ofmemory (OOM) after processing approximately 80 frames, exposing a fundamental limitation of current joint modeling paradigms under long input streams. This phenomenon indicates that, for long-running online systems, there is an urgent need for an incremental modeling approach that does not require repeatedly reprocessing historical frames.
+                </p>
+              <img src="./static/images/motivation.png" 
+                   class="interpolation-image" 
+                   alt="Motivation" 
+                   style="width: 80%; height: auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+          <!-- Method. -->
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <h2 class="title is-3">Method</h2>
+              <!-- Interpolating. -->
+                <div class="content has-text-justified">
+                <p>
+                  Overview of S2GS. S2GS processes an uncalibrated and unposed RGB image stream in a strictly causal manner. A causal
+                  Transformer encoder, guided by geometric priors from a 3D foundation model, predicts camera parameters, depth, and Gaussian attributes to incrementally construct 3D Gaussian representation. A decoupled semantic stream leverages a 2D foundation model and a query-driven decoder to produce per-view semantic and instance predictions. Query-level contrastive learning and an online instance memory bank (MB) stabilize instance identities over time. Semantic confidence is lifted to the 3D Gaussian field and decoded via splatting, enabling unified novel view synthesis, semantic segmentation, instance segmentation, and panoptic segmentation without revisiting past frames.
+                </p>
+                <img src="./static/images/main.png" 
+                     class="interpolation-image" 
+                     alt="Interpolate start reference image" 
+                     style="width: 100%; height: auto; display: block; margin: 0 auto;">
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Method. -->
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Qualitative Results</h2>
+            <!-- Interpolating. -->
+              <div class="content has-text-justified">
+                <p>
+                  Novel View Synthesis / Semantic Segmentation / Instance Tracking.
+                </p>
+              <img src="./static/images/vis_results.png" 
+                   class="interpolation-image" 
+                   alt="Qualitative results" 
+                   style="width: 100%; height: auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <!-- Qualitative Results section（整块注释；原内部小注释已去掉以免嵌套截断）
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Qualitative Results</h2>
+            <div class="content has-text-justified">
+              <img src="./static/images/supp_full_vis.png" 
+                   class="interpolation-image" 
+                   alt="Interpolate start reference image" 
+                   style="width: 80%; height: 100%; display: block; margin: 0 auto;">
+              <p> 
+                <br>
+              </p>
+              <img src="./static/images/supp_more_vis.png" 
+                   class="interpolation-image" 
+                   alt="Interpolate start reference image" 
+                   style="width: 80%; height: 100%; display: block; margin: 0 auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+    
+
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@misc{zhang2026s2gsstreamingsemanticgaussian,
+      title={S2GS: Streaming Semantic Gaussian Splatting for Online Scene Understanding and Reconstruction}, 
+      author={Renhe Zhang and Yuyang Tan and Jingyu Gong and Zhizhong Zhang and Lizhuang Ma and Yuan Xie and Xin Tan},
+      year={2026},
+      eprint={2603.14232},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.14232}, 
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <a class="icon-link"
+               href="https://arxiv.org/abs/2603.14232">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+            <a class="icon-link" href="https://github.com/stdcouzrh/s2gs" class="external-link" disabled>
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+                <p>
+                  The website template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                </p>
+              </div>
+            </div>
+            <!-- <a href="https://mapmyvisitors.com/web/1bvxj" title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=kSH52UUctXHgyZTvsD38_H_styzXoRq6qG_cg4tttWI&cl=ffffff"></a> -->
+          </div>
+          
+        </div>
+    </footer>
+
+</body>
+</html>
